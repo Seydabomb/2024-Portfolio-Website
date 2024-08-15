@@ -1,0 +1,284 @@
+/*==================== Global CSS =========================*/
+
+body {
+	padding-top: 3.375rem;
+	color: #6c757d;
+}
+
+@media (min-width: 992px) {
+	body {
+		padding-top: 0;
+		padding-left: 17rem;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: uppercase;
+}
+
+h1 {
+	line-height: 1;
+}
+
+.text-primary {
+	color: #967bb6 !important;
+}
+
+p.lead {
+	font-size: 1.15rem;
+	font-weight: 400;
+}
+
+.subheading {
+	font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Noto Color Emoji";
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+
+section.resume-section {
+	display: flex;
+	align-items: center;
+	padding: 5rem 1rem;
+	max-width: 75rem;
+}
+
+section.resume-section .resume-section-content {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	section.resume-section {
+		min-height: 100vh;
+	}
+}
+
+@media (min-width: 992px) {
+	section.resume-section {
+		padding: 5rem 3rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.img-profile {
+		max-width: 100px; /* Set a specific size for small screens */
+	}
+}
+
+.bg-primary {
+	background-color: #967bb6 !important;
+}
+
+a {
+	color: darkcyan;
+}
+/*==================== Navigation CSS =========================*/
+
+#sideNav .navbar-nav .nav-item .nav-link {
+	font-weight: 800;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+}
+
+#sideNav .navbar-toggler:focus {
+	outline-color: #d48a6e;
+}
+
+@media (min-width: 992px) {
+	#sideNav {
+		text-align: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		flex-direction: column;
+		width: 17rem;
+		height: 100vh;
+	}
+
+	#sideNav .navbar-brand {
+		display: flex;
+		margin: auto auto 0;
+		padding: 0.5rem;
+	}
+
+	#sideNav .navbar-brand .img-profile {
+		max-width: 10rem;
+		max-height: 10rem;
+		border: 0.5rem solid rgba(255, 255, 255, 0.2);
+	}
+
+	#sideNav .navbar-collapse {
+		display: flex;
+		align-items: flex-start;
+		flex-grow: 0;
+		width: 100%;
+		margin-bottom: auto;
+	}
+
+	#sideNav .navbar-collapse .navbar-nav {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	#sideNav .navbar-collapse .navbar-nav .nav-item {
+		display: block;
+	}
+
+	#sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+		display: block;
+	}
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: rgba(127, 255, 212, 0.5);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+	color: #7fffd4;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+	color: #7fffd4;
+}
+
+/*==================== Contact Form CSS =========================*/
+
+.contact-form .full-name {
+	grid-area: fname;
+}
+
+.contact-form .email {
+	grid-area: email;
+}
+
+.contact-form .phone {
+	grid-area: phone;
+}
+
+.contact-form .subject {
+	grid-area: subject;
+}
+
+.contact-form .message {
+	grid-area: message;
+}
+
+.contact-form button {
+	grid-area: button;
+}
+
+.contact-form {
+	display: grid;
+	justify-items: center;
+	justify-content: left;
+	grid-template-areas:
+		"fname phone"
+		"email subject"
+		"message message"
+		"button button";
+	grid-gap: 30px;
+}
+
+.contact-form input {
+	background: transparent;
+	border: 2px solid darkcyan;
+	min-width: 250px;
+	height: 50px;
+}
+
+.contact-form textarea {
+	background: transparent;
+	border: none;
+	border: 2px solid darkcyan;
+	min-width: 550px;
+	height: 150px;
+}
+
+.contact-form ::placeholder {
+	color: gray;
+	padding-bottom: 10px;
+}
+
+/*==================== Icons CSS =========================*/
+
+.social-icons .social-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 3.5rem;
+	width: 3.5rem;
+	background-color: #967bb6;
+	color: #fff;
+	border-radius: 100%;
+	font-size: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+.social-icons .social-icon:last-child {
+	margin-right: 0;
+}
+
+.social-icons .social-icon:hover {
+	background-color: #7fffd4;
+}
+
+.dev-icons {
+	font-size: 3rem;
+}
+
+/* Basic styling for the list items */
+#skills .list-inline-item {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	margin: 10px;
+}
+
+/* Styling for the tooltip text */
+#skills .list-inline-item::before {
+	content: attr(data-tooltip); /* Using the content from data-tooltip attribute */
+	position: absolute;
+	bottom: 125%; /* Positioning the tooltip above the icon */
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: black;
+	color: white;
+	font-size: 18px; /* Adjusting font size */
+	padding: 2px 5px; /* Adjusting padding */
+	border-radius: 3px; /* Adjusting border-radius */
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s;
+	white-space: nowrap;
+	z-index: 1;
+}
+
+/* Styling for the tooltip arrow */
+#skills .list-inline-item::after {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border-width: 5px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s;
+	z-index: 1;
+}
+
+/* Showing the tooltip when hovering */
+#skills .list-inline-item:hover::before,
+#skills .list-inline-item:hover::after {
+	opacity: 1;
+	visibility: visible;
+}
